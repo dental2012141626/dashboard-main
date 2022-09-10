@@ -1,0 +1,146 @@
+"0","install.packages(""leaflet"")"
+"2","WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/lazyeval_0.2.2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 161309 bytes (157 KB)
+"
+"2","downloaded 157 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/terra_1.6-7.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 24978450 bytes (23.8 MB)
+"
+"2","downloaded 23.8 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/gridExtra_2.3.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1109556 bytes (1.1 MB)
+"
+"2","downloaded 1.1 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/crosstalk_1.2.0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 410191 bytes (400 KB)
+"
+"2","downloaded 400 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/png_0.1-7.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 188477 bytes (184 KB)
+"
+"2","downloaded 184 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/raster_3.5-29.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 3549395 bytes (3.4 MB)
+"
+"2","downloaded 3.4 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/sp_1.5-0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1793081 bytes (1.7 MB)
+"
+"2","downloaded 1.7 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/viridis_0.6.2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 2999934 bytes (2.9 MB)
+"
+"2","downloaded 2.9 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/leaflet.providers_1.9.0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 50191 bytes (49 KB)
+"
+"2","downloaded 49 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/leaflet_2.1.1.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 2339147 bytes (2.2 MB)
+"
+"2","downloaded 2.2 MB
+
+"
+"1","package ‘lazyeval’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘terra’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘gridExtra’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘crosstalk’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘png’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘raster’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘sp’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘viridis’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘leaflet.providers’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘leaflet’ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1",""
+"1","The downloaded binary packages are in
+	C:\Users\jdrdionisio\AppData\Local\Temp\RtmpiYTfzP\downloaded_packages"
+"1",""
+"1","
+"
+"0","library(leaflet)"
+"0",""
+"0","mybins <- c(0,60,120,240,480,Inf)"
+"0","mycolors <- c(""#f7f7f7"",""#fee391"",""#fb6a4a"",""#cb181d"",""#67000d"")"
+"0","mypalette <- colorBin( palette=mycolors, domain=comm_pt$Incidencia, na.color=""transparent"", bins=mybins)"
+"0",""
+"0","# Prepare the text for tooltips:"
+"0","mytext <- paste("
+"0","    ""Concelho: "", comm_pt$NAME_2,""<br/>"","
+"0","    ""Incidência: "", comm_pt$Incidencia, ""<br/>"","
+"0","    ""Categoria: "", comm_pt$Incidencia_descritivo,"
+"0","    sep="""") %>%"
+"0","  lapply(htmltools::HTML)"
+"0",""
+"0","# Final Map"
+"0","leaflet(comm_pt)%>%"
+"0","  addTiles()  %>%"
+"0","  setView( lat=39.5, lng=-7.6, zoom=7) %>%"
+"0","  addProviderTiles(""CartoDB.Positron"") %>%"
+"0","  addPolygons("
+"0","    fillColor = ~mypalette(Incidencia),"
+"0","    stroke=TRUE,"
+"0","    fillOpacity = 0.9,"
+"0","    color=""grey"","
+"0","    weight=0.3,"
+"0","    label = mytext,"
+"0","    labelOptions = labelOptions("
+"0","      style = list(""font-weight"" = ""normal"", padding = ""3px 8px""),"
+"0","      textsize = ""13px"","
+"0","      direction = ""auto"""
+"0","    )"
+"0","  ) %>%"
+"0","  addLegend( pal=mypalette, values=~Incidencia, opacity=0.9, title = ""Incidência"", position = ""bottomleft"" )"

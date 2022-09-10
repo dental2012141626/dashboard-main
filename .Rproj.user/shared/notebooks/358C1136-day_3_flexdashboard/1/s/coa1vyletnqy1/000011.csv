@@ -1,0 +1,138 @@
+"0","install.packages(""highcharter"")"
+"2","WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+"
+"2","Installing package into ‘C:/Users/jdrdionisio/AppData/Local/R/win-library/4.2’
+(as ‘lib’ is unspecified)
+"
+"2","also installing the dependencies ‘XML’, ‘TTR’, ‘rlist’, ‘zoo’, ‘xts’, ‘quantmod’, ‘igraph’, ‘rjson’
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/XML_3.99-0.10.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 3051962 bytes (2.9 MB)
+"
+"2","downloaded 2.9 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/TTR_0.24.3.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 519588 bytes (507 KB)
+"
+"2","downloaded 507 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/rlist_0.4.6.2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 246678 bytes (240 KB)
+"
+"2","downloaded 240 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/zoo_1.8-10.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1045335 bytes (1020 KB)
+"
+"2","downloaded 1020 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/xts_0.12.1.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 896860 bytes (875 KB)
+"
+"2","downloaded 875 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/quantmod_0.4.20.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1031821 bytes (1007 KB)
+"
+"2","downloaded 1007 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/igraph_1.3.4.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 5838691 bytes (5.6 MB)
+"
+"2","downloaded 5.6 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/rjson_0.2.21.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 461107 bytes (450 KB)
+"
+"2","downloaded 450 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/highcharter_0.9.4.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1687950 bytes (1.6 MB)
+"
+"2","downloaded 1.6 MB
+
+"
+"1","package ‘XML’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘TTR’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘rlist’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘zoo’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘xts’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘quantmod’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘igraph’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘rjson’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘highcharter’ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1",""
+"1","The downloaded binary packages are in
+	C:\Users\jdrdionisio\AppData\Local\Temp\RtmpiYTfzP\downloaded_packages"
+"1",""
+"1","
+"
+"0","library(highcharter)"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"2","Registered S3 method overwritten by 'quantmod':
+  method            from
+  as.zoo.data.frame zoo 
+"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","Highcharts (www.highcharts.com) is a Highsoft software product which is
+"
+"2","not free for commercial and Governmental use
+"
+"0","highchart() %>% "
+"0","  hc_chart(type = ""column"") %>% "
+"0","  hc_add_theme(hc_theme_smpl()) %>% "
+"0","  hc_title(text = ""Doentes saídos dos hospitais em Portugal"") %>% "
+"0","  hc_subtitle(text = ""Fonte: Ministério da Saúde"") %>% "
+"0","  hc_xAxis(categories = format(inpatient_sum$periodo, ""%b %Y"")) %>% "
+"0","  hc_yAxis(title = list(text = ""Doentes saídos (Mensal)"")) %>% "
+"0","  hc_add_series(data = inpatient_sum$doentes_saidos_var,"
+"0","                name = ""Doentes saídos"", color = ""#e6550d"") %>% "
+"0","  hc_exporting("
+"0","    enabled = TRUE"
+"0","  )"
